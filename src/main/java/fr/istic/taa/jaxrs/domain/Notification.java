@@ -1,7 +1,8 @@
 package fr.istic.taa.jaxrs.domain;
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
 
 @Entity
 public class Notification {
@@ -15,7 +16,7 @@ public class Notification {
 
 
     @Id
-    @GeneratedValue
+    @GenaratedValue
     public Long getId() {
         return id;
     }

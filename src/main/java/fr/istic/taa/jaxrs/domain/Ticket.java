@@ -1,4 +1,5 @@
 package fr.istic.taa.jaxrs.domain;
+
 import jakarta.persistence.*;
 
 
