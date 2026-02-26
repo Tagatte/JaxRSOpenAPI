@@ -1,8 +1,8 @@
 package fr.istic.taa.jaxrs.domain;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Notification {
@@ -10,13 +10,13 @@ public class Notification {
     private Long id;
     private String content;
     private String type;
-
+    private Concert concert;
 
     public Notification() {}
 
 
     @Id
-    @GenaratedValue
+    @GeneratedValue
     public Long getId() {
         return id;
     }
@@ -41,5 +41,12 @@ public class Notification {
         this.type = type;
     }
 
+    @ManyToOne
+    public Concert getConcert() {
+        return concert;
+    }
 
+    public void setConcert(Concert concert) {
+        this.concert = concert;
+    }
 }

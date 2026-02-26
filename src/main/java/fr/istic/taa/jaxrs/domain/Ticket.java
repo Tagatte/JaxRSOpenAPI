@@ -15,7 +15,7 @@ public class Ticket {
     private Date dateAchat;
     private Date dateAnnulation;
     private Date dateRemboursement;
-    private Utilisateur utilisateur;
+    private User user;
     private Concert concert;
 
     public Ticket() {
@@ -83,12 +83,12 @@ public class Ticket {
     }
 
     @ManyToOne
-    public Utilisateur getUtilisateur() {
-        return utilisateur;
+    public User getUser() {
+        return user;
     }
 
-    public void setUtilisateur(Utilisateur utilisateur) {
-        this.utilisateur = utilisateur;
+    public void setUser(User user) {
+        this.user = user;
     }
     @ManyToOne
     public Concert getConcert() {

@@ -8,20 +8,26 @@ import java.util.Date;
 @Entity
 public class Concert {
     private Long id;
-    private String nom;
+    private String name;
     private Date date;
-    private int heureDebut;
-    private int heureFin;
-    private String lieu;
-    private Long prix;
-    private String genreMusical;
-    private String popularite;
-    private Long nbPlace;
+    private int startTime;
+    private int endTime;
+    private String location;
+    private Long price;
+    private String musicalGenre;
+    private String popularity;
+    private Long placeNumber;
     private String description;
-    private boolean estValide;
-    private boolean estAnnule;
-    private boolean estSupprime;
+    private boolean isCanceled;
+    private boolean isDeleted;
+    private boolean isValidated;
+    private Date validationDate;
+    private Admin admin;
+    private Organizer organizer;
     private Collection<Ticket> tickets;
+    private Collection<Artist> artists;
+    private Collection<Notification> notifications;
+
 
     @Id
     @GeneratedValue()
@@ -33,20 +39,20 @@ public class Concert {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getHeureDebut() {
-        return heureDebut;
+    public int getStartTime() {
+        return startTime;
     }
 
-    public void setHeureDebut(int heureDebut) {
-        this.heureDebut = heureDebut;
+    public void setStartTime(int startTime) {
+        this.startTime = startTime;
     }
 
     @Temporal(TemporalType.DATE)
@@ -58,52 +64,52 @@ public class Concert {
         this.date = date;
     }
 
-    public int getHeureFin() {
-        return heureFin;
+    public int getEndTime() {
+        return endTime;
     }
 
-    public void setHeureFin(int heureFin) {
-        this.heureFin = heureFin;
+    public void setEndTime(int endTime) {
+        this.endTime = endTime;
     }
 
-    public Long getPrix() {
-        return prix;
+    public Long getPrice() {
+        return price;
     }
 
-    public void setPrix(Long prix) {
-        this.prix = prix;
+    public void setPrice(Long price) {
+        this.price = price;
     }
 
-    public String getLieu() {
-        return lieu;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLieu(String lieu) {
-        this.lieu = lieu;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getGenreMusical() {
-        return genreMusical;
+    public String getMusicalGenre() {
+        return musicalGenre;
     }
 
-    public void setGenreMusical(String genreMusical) {
-        this.genreMusical = genreMusical;
+    public void setMusicalGenre(String musicalGenre) {
+        this.musicalGenre = musicalGenre;
     }
 
-    public String getPopularite() {
-        return popularite;
+    public String getPopularity() {
+        return popularity;
     }
 
-    public void setPopularite(String popularite) {
-        this.popularite = popularite;
+    public void setPopularity(String popularity) {
+        this.popularity = popularity;
     }
 
-    public Long getNbPlace() {
-        return nbPlace;
+    public Long getPlaceNumber() {
+        return placeNumber;
     }
 
-    public void setNbPlace(Long nbPlace) {
-        this.nbPlace = nbPlace;
+    public void setPlaceNumber(Long placeNumber) {
+        this.placeNumber = placeNumber;
     }
 
     public String getDescription() {
@@ -114,35 +120,79 @@ public class Concert {
         this.description = description;
     }
 
-    public boolean isEstValide() {
-        return estValide;
+    public boolean isIsValidated() {
+        return isValidated;
     }
 
-    public void setEstValide(boolean estValide) {
-        this.estValide = estValide;
+    public void setIsValidated(boolean isValidated) {
+        this.isValidated = isValidated;
     }
 
-    public boolean isEstAnnule() {
-        return estAnnule;
+    public boolean isIsCanceled() {
+        return isCanceled;
     }
 
-    public void setEstAnnule(boolean estAnnule) {
-        this.estAnnule = estAnnule;
+    public void setIsCanceled(boolean isCanceled) {
+        this.isCanceled = isCanceled;
     }
 
-    public boolean isEstSupprime() {
-        return estSupprime;
+    public boolean isIsDeleted() {
+        return isDeleted;
     }
 
-    public void setEstSupprime(boolean estSupprime) {
-        this.estSupprime = estSupprime;
+    public void setIsDeleted(boolean isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
+    public Date getValidationDate() {
+        return validationDate;
+    }
+
+    public void setValidationDate(Date validationDate) {
+        this.validationDate = validationDate;
     }
     @OneToMany(mappedBy = "concert")
     public Collection<Ticket> getTickets() {
         return tickets;
     }
 
+
+    @ManyToOne
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+
+    @ManyToOne
+    public Organizer getOrganizer() {
+        return organizer;
+    }
+
+    public void setOrganizer(Organizer organizer) {
+        this.organizer = organizer;
+    }
     public void setTickets(Collection<Ticket> tickets) {
         this.tickets = tickets;
+    }
+
+    @ManyToMany
+    public Collection<Artist> getArtists() {
+        return artists;
+    }
+
+    public void setArtists(Collection<Artist> artists) {
+        this.artists = artists;
+    }
+
+    @OneToMany(mappedBy = "concert")
+    public Collection<Notification> getNotifications() {
+        return notifications;
+    }
+
+    public void setNotifications(Collection<Notification> notifications) {
+        this.notifications = notifications;
     }
 }
