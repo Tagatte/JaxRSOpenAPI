@@ -1,4 +1,7 @@
 package fr.istic.taa.jaxrs.dao.generic;
 
-public class OrganizerDao {
+
+import fr.istic.taa.jaxrs.domain.Organizer;
+
+public class OrganizerDao extends AbstractJpaDao<Long, Organizer>{
 }
