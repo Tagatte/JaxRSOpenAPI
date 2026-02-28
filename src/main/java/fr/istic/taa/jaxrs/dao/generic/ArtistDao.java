@@ -1,4 +1,4 @@
 package fr.istic.taa.jaxrs.dao.generic;
 
-public class AdministrateurDao {
+public class ArtistDao {
 }
