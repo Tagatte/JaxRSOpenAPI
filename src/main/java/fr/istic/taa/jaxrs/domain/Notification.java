@@ -4,8 +4,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.ManyToOne;
 
+import java.io.Serializable;
+
 @Entity
-public class Notification {
+public class Notification implements Serializable {
 
     private Long id;
     private String content;

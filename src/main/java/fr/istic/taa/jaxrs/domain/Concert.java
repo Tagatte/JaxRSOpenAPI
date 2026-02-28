@@ -2,11 +2,12 @@ package fr.istic.taa.jaxrs.domain;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
 @Entity
-public class Concert {
+public class Concert implements Serializable {
     private Long id;
     private String name;
     private Date date;

@@ -1,4 +1,6 @@
 package fr.istic.taa.jaxrs.dao.generic;
 
-public class AdminDao {
+import fr.istic.taa.jaxrs.domain.Admin;
+
+public class AdminDao extends  AbstractJpaDao<Long, Admin> {
 }

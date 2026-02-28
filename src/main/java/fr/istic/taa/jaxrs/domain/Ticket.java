@@ -3,11 +3,11 @@ package fr.istic.taa.jaxrs.domain;
 import jakarta.persistence.*;
 
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Ticket {
-
+public class Ticket implements Serializable {
     private Long id;
     private Long prix;
     private boolean estAnnule;
