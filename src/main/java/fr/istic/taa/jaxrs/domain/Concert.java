@@ -179,7 +179,7 @@ public class Concert implements Serializable {
         this.tickets = tickets;
     }
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "concerts")
     public Collection<Artist> getArtists() {
         return artists;
     }

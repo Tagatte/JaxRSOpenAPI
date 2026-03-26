@@ -6,6 +6,8 @@ import java.util.List;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
+import static java.util.Objects.requireNonNull;
+
 public abstract class AbstractJpaDao<K, T extends Serializable> implements IGenericDao<K, T> {
 
 	private Class<T> clazz;
@@ -16,6 +18,10 @@ public abstract class AbstractJpaDao<K, T extends Serializable> implements IGene
 		this.entityManager = EntityManagerHelper.getEntityManager();
 	}
 
+    public AbstractJpaDao(Class<T> clazz) {
+        this.entityManager = EntityManagerHelper.getEntityManager();
+        this.clazz = requireNonNull(clazz);
+    }
 	public void setClazz(Class<T> clazzToSet) {
 		this.clazz = clazzToSet;
 	}
