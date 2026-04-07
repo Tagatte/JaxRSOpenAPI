@@ -16,8 +16,8 @@ public class Concert implements Serializable {
     private String location;
     private Long price;
     private String musicalGenre;
-    private String popularity;
-    private Long placeNumber;
+    private int popularity;
+    private int placeNumber;
     private String description;
     private boolean isCanceled;
     private boolean isDeleted;
@@ -97,19 +97,19 @@ public class Concert implements Serializable {
         this.musicalGenre = musicalGenre;
     }
 
-    public String getPopularity() {
+    public int getPopularity() {
         return popularity;
     }
 
-    public void setPopularity(String popularity) {
+    public void setPopularity(int popularity) {
         this.popularity = popularity;
     }
 
-    public Long getPlaceNumber() {
+    public int getPlaceNumber() {
         return placeNumber;
     }
 
-    public void setPlaceNumber(Long placeNumber) {
+    public void setPlaceNumber(int placeNumber) {
         this.placeNumber = placeNumber;
     }
 

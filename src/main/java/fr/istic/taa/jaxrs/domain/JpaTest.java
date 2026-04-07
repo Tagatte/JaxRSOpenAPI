@@ -64,8 +64,8 @@ public class JpaTest {
                 concert.setPrice(75L);
                 concert.setMusicalGenre("Pop");
                 concert.setLocation("Bercy, Paris");
-                concert.setPlaceNumber(15000L);
-                concert.setPopularity("High");
+                concert.setPlaceNumber(15000);
+                concert.setPopularity(1);
                 concert.setIsCanceled(false);
                 concert.setIsDeleted(false);
                 concert.setIsValidated(true);
