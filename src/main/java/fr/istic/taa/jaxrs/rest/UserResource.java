@@ -21,4 +21,5 @@ public class UserResource {
         return userService.getAllUsers();
     }
 
+
 }

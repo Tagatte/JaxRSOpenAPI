@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c34f434d-080f-43db-ba81-5afb68a8cf5b" name="Changes" comment="ajout de l'extends AbstractJpaDao aux classes Dao">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/UserResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test.lck" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test.script" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/TestApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/AbstractJpaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/AbstractJpaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Concert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Concert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Concert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Concert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Notification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Ticket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/UserResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,13 +53,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Shell Script.run-hsqldb-server.sh.executor": "Run",
     "Shell Script.show-hsqldb.sh.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/M1_ISTIC/TP/SIR/JaxRSOpenAPI",
+    "last_opened_file_path": "C:/Users/tdiop/JaxRSOpenAPI",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,17 +118,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="JaxRSOpenAPI" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="JaxRSOpenAPI" />
-      <option name="filePath" />
-      <method v="2" />
     </configuration>
     <configuration name="run-hsqldb-server.sh" type="ShConfigurationType">
       <option name="SCRIPT_TEXT" value="" />
@@ -214,6 +195,8 @@
       <workItem from="1773161450772" duration="1673000" />
       <workItem from="1774367930403" duration="5231000" />
       <workItem from="1774528333929" duration="10287000" />
+      <workItem from="1775166511760" duration="742000" />
+      <workItem from="1775489580034" duration="2355000" />
     </task>
     <task id="LOCAL-00001" summary="entity add">
       <option name="closed" value="true" />
