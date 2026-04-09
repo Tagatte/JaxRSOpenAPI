@@ -75,10 +75,10 @@ public class JpaTest {
 
                 // 6. Création d'un TICKET (Lié au Concert et à l'Utilisateur)
                 Ticket ticket = new Ticket();
-                ticket.setPrix(75L);
-                ticket.setDateAchat(new java.util.Date());
-                ticket.setEstAnnule(false);
-                ticket.setEstRembourse(false);
+                ticket.setPrice(75L);
+                ticket.setDate(new java.util.Date());
+                ticket.setIsCanceled(false);
+                ticket.setIsRefunded(false);
                 // On lie le ticket au concert et à l'utilisateur
                 // ticket.setConcert(concert);
                 // ticket.setUser(user);

@@ -47,11 +47,12 @@ public class ConcertService {
         return concert;
     }
 
-    //public List<Concert> searchConcerts(String query) {
-
-    //}
+    public List<Concert> searchConcerts(String searchQ) {
+//        System.out.println(searchQ);
+        return  concertDao.searchConcerts(searchQ);
+    }
 
     public void deleteConcert(Long id) {
-        concertDao.delete(getConcert(id));
+        concertDao.deleteById(id);
     }
 }

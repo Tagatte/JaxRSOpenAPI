@@ -26,8 +26,9 @@ public class ConcertResource {
 
     @GET
     @Path("/search")
-    public List<Concert> searchConcerts(@QueryParam("query") String name) {
+    public List<Concert> searchConcerts(@QueryParam("q") String searchQ) {
 
+        return concertService.searchConcerts(searchQ);
     }
 
     @GET

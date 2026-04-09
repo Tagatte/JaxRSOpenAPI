@@ -9,12 +9,12 @@ import java.util.Date;
 @Entity
 public class Ticket implements Serializable {
     private Long id;
-    private Long prix;
-    private boolean estAnnule;
-    private boolean estRembourse;
-    private Date dateAchat;
-    private Date dateAnnulation;
-    private Date dateRemboursement;
+    private Long price;
+    private boolean isCanceled;
+    private boolean isRefunded;
+    private Date date;
+    private Date cancelDate;
+    private Date refundDate;
     private User user;
     private Concert concert;
 
@@ -32,54 +32,54 @@ public class Ticket implements Serializable {
         this.id = id;
     }
 
-    public Long getPrix() {
-        return prix;
+    public Long getPrice() {
+        return price;
     }
 
-    public void setPrix(Long prix) {
-        this.prix = prix;
+    public void setPrice(Long price) {
+        this.price = price;
     }
 
-    public boolean isEstAnnule() {
-        return estAnnule;
+    public boolean isCanceled() {
+        return isCanceled;
     }
 
-    public void setEstAnnule(boolean estAnnule) {
-        this.estAnnule = estAnnule;
+    public void setIsCanceled(boolean isCanceled) {
+        this.isCanceled = isCanceled;
     }
 
-    public boolean isEstRembourse() {
-        return estRembourse;
+    public boolean isRefunded() {
+        return isRefunded;
     }
 
-    public void setEstRembourse(boolean estRembourse) {
-        this.estRembourse = estRembourse;
-    }
-
-    @Temporal(TemporalType.DATE)
-    public Date getDateAchat() {
-        return dateAchat;
-    }
-
-    public void setDateAchat(Date dateAchat) {
-        this.dateAchat = dateAchat;
-    }
-    @Temporal(TemporalType.DATE)
-    public Date getDateAnnulation() {
-        return dateAnnulation;
-    }
-
-    public void setDateAnnulation(Date dateAnnulation) {
-        this.dateAnnulation = dateAnnulation;
+    public void setIsRefunded(boolean isRefunded) {
+        this.isRefunded = isRefunded;
     }
 
     @Temporal(TemporalType.DATE)
-    public Date getDateRemboursement() {
-        return dateRemboursement;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDateRemboursement(Date dateRemboursement) {
-        this.dateRemboursement = dateRemboursement;
+    public void setDate(Date date) {
+        this.date = date;
+    }
+    @Temporal(TemporalType.DATE)
+    public Date getCancelDate() {
+        return cancelDate;
+    }
+
+    public void setCancelDate(Date cancelDate) {
+        this.cancelDate = cancelDate;
+    }
+
+    @Temporal(TemporalType.DATE)
+    public Date getRefundDate() {
+        return refundDate;
+    }
+
+    public void setRefundDate(Date refundDate) {
+        this.refundDate = refundDate;
     }
 
     @ManyToOne
