@@ -1,4 +1,5 @@
 package fr.istic.taa.jaxrs.domain;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -11,6 +12,7 @@ import java.util.Collection;
 @DiscriminatorValue("User")
 public class User extends Person implements Serializable {
 
+    @JsonIgnore
     private Collection<Ticket> tickets;
     public User() {}
 
