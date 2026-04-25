@@ -44,7 +44,7 @@ public class Ticket implements Serializable {
         return isCanceled;
     }
 
-    public void setIsCanceled(boolean isCanceled) {
+    public void setCanceled(boolean isCanceled) {
         this.isCanceled = isCanceled;
     }
 
@@ -52,7 +52,7 @@ public class Ticket implements Serializable {
         return isRefunded;
     }
 
-    public void setIsRefunded(boolean isRefunded) {
+    public void setRefunded(boolean isRefunded) {
         this.isRefunded = isRefunded;
     }
 

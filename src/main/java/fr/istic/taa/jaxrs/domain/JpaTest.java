@@ -77,8 +77,8 @@ public class JpaTest {
                 Ticket ticket = new Ticket();
                 ticket.setPrice(75L);
                 ticket.setDate(new java.util.Date());
-                ticket.setIsCanceled(false);
-                ticket.setIsRefunded(false);
+                ticket.setCanceled(false);
+                ticket.setRefunded(false);
                 // On lie le ticket au concert et à l'utilisateur
                 // ticket.setConcert(concert);
                 // ticket.setUser(user);
