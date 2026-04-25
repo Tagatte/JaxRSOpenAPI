@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c34f434d-080f-43db-ba81-5afb68a8cf5b" name="Changes" comment="ajout de l'extends AbstractJpaDao aux classes Dao">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/NotificationResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/TicketResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/NotificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/TicketService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ConcertDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ConcertDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Concert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Concert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/TestApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/NotificationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/NotificationDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/ConcertResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/ConcertResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/ConcertDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/ConcertDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Concert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Concert.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/TestApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/TestApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/rest/ConcertResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/rest/ConcertResource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ConcertService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ConcertService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +218,7 @@
       <workItem from="1777069095779" duration="1828000" />
       <workItem from="1777113045746" duration="3733000" />
       <workItem from="1777117415203" duration="3777000" />
-      <workItem from="1777122788862" duration="9185000" />
+      <workItem from="1777122788862" duration="11576000" />
     </task>
     <task id="LOCAL-00001" summary="entity add">
       <option name="closed" value="true" />

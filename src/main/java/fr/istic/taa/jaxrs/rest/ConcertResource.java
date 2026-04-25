@@ -1,76 +1,148 @@
 package fr.istic.taa.jaxrs.rest;
 
-import fr.istic.taa.jaxrs.dao.generic.ConcertDao;
 import fr.istic.taa.jaxrs.domain.Concert;
 import fr.istic.taa.jaxrs.dto.ConcertCreateDto;
 import fr.istic.taa.jaxrs.dto.ConcertUpdateDto;
 import fr.istic.taa.jaxrs.service.ConcertService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
-import org.hibernate.sql.Update;
 
 import java.util.List;
 
 @Path("/concerts")
 @Produces(MediaType.APPLICATION_JSON)
+@Tag(name = "Concerts", description = "Gestion des concerts")
 public class ConcertResource {
 
     private static final ConcertService concertService = new ConcertService();
 
     @GET
     @Path("/")
+    @Operation(summary = "Récupérer tous les concerts", description = "Retourne la liste de tous les concerts disponibles")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Liste des concerts récupérée avec succès",
+                    content = @Content(schema = @Schema(implementation = Concert.class))),
+            @ApiResponse(responseCode = "500", description = "Erreur interne du serveur")
+    })
     public List<Concert> getConcerts() {
         return concertService.getConcerts();
     }
 
     @GET
     @Path("/search")
-    public List<Concert> searchConcerts(@QueryParam("q") String searchQ) {
-
+    @Operation(summary = "Rechercher des concerts", description = "Recherche des concerts par artiste, lieu, nom ou genre musical")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Résultats de recherche retournés avec succès"),
+            @ApiResponse(responseCode = "500", description = "Erreur interne du serveur")
+    })
+    public List<Concert> searchConcerts(
+            @Parameter(description = "Terme de recherche", required = true)
+            @QueryParam("q") String searchQ) {
         return concertService.searchConcerts(searchQ);
     }
 
     @GET
     @Path("/{id}")
-    public Concert getConcert(@PathParam("id") long id) {
-        return  concertService.getConcert(id);
+    @Operation(summary = "Récupérer un concert par ID", description = "Retourne les détails d'un concert spécifique")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Concert trouvé"),
+            @ApiResponse(responseCode = "404", description = "Concert non trouvé"),
+            @ApiResponse(responseCode = "500", description = "Erreur interne du serveur")
+    })
+    public Concert getConcert(
+            @Parameter(description = "ID du concert", required = true)
+            @PathParam("id") long id) {
+        return concertService.getConcert(id);
     }
 
     @POST
     @Path("/")
-    public Concert createConcert(ConcertCreateDto concertCreateDto) {
-      return concertService.createConcert(concertCreateDto);
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Operation(summary = "Créer un concert", description = "Crée un nouveau concert")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Concert créé avec succès"),
+            @ApiResponse(responseCode = "400", description = "Données invalides"),
+            @ApiResponse(responseCode = "500", description = "Erreur interne du serveur")
+    })
+    public Concert createConcert(
+            @Parameter(description = "Données du concert à créer", required = true)
+            ConcertCreateDto concertCreateDto) {
+        return concertService.createConcert(concertCreateDto);
     }
 
     @PUT
     @Path("/{id}")
-    public Concert updateConcert(@PathParam("id") long id, ConcertUpdateDto concertUpdateDto) {
-        return  concertService.updateConcert(id, concertUpdateDto);
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Operation(summary = "Modifier un concert", description = "Met à jour les informations d'un concert existant")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Concert modifié avec succès"),
+            @ApiResponse(responseCode = "400", description = "Données invalides ou ID incohérent"),
+            @ApiResponse(responseCode = "404", description = "Concert non trouvé"),
+            @ApiResponse(responseCode = "500", description = "Erreur interne du serveur")
+    })
+    public Concert updateConcert(
+            @Parameter(description = "ID du concert", required = true)
+            @PathParam("id") long id,
+            @Parameter(description = "Données de mise à jour", required = true)
+            ConcertUpdateDto concertUpdateDto) {
+        return concertService.updateConcert(id, concertUpdateDto);
     }
 
     @DELETE
     @Path("/{id}")
-    public void deleteConcert(@PathParam("id") long id) {
+    @Operation(summary = "Supprimer un concert", description = "Supprime un concert par son ID")
+    @ApiResponses({
+            @ApiResponse(responseCode = "204", description = "Concert supprimé avec succès"),
+            @ApiResponse(responseCode = "404", description = "Concert non trouvé"),
+            @ApiResponse(responseCode = "500", description = "Erreur interne du serveur")
+    })
+    public void deleteConcert(
+            @Parameter(description = "ID du concert à supprimer", required = true)
+            @PathParam("id") long id) {
         concertService.deleteConcert(id);
     }
 
     @GET
     @Path("/location")
-    public List<Concert> getConcertsByLocation(@QueryParam("q") String location) {
+    @Operation(summary = "Rechercher par lieu", description = "Retourne les concerts se déroulant à un lieu spécifique")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Concerts trouvés"),
+            @ApiResponse(responseCode = "500", description = "Erreur interne du serveur")
+    })
+    public List<Concert> getConcertsByLocation(
+            @Parameter(description = "Lieu du concert", required = true)
+            @QueryParam("q") String location) {
         return concertService.findByLocation(location);
     }
 
     @GET
     @Path("/validated")
+    @Operation(summary = "Concerts validés", description = "Retourne uniquement les concerts validés par un administrateur")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Liste des concerts validés"),
+            @ApiResponse(responseCode = "500", description = "Erreur interne du serveur")
+    })
     public List<Concert> getValidatedConcerts() {
         return concertService.findValidated();
     }
 
     @GET
     @Path("/maxprice")
-    public List<Concert> getConcertsByMaxPrice(@QueryParam("price") Long maxPrice) {
+    @Operation(summary = "Filtrer par prix maximum", description = "Retourne les concerts dont le prix est inférieur ou égal au montant donné")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Liste des concerts filtrés par prix"),
+            @ApiResponse(responseCode = "500", description = "Erreur interne du serveur")
+    })
+    public List<Concert> getConcertsByMaxPrice(
+            @Parameter(description = "Prix maximum en euros", required = true)
+            @QueryParam("price") Long maxPrice) {
         return concertService.findByMaxPrice(maxPrice);
     }
-
 }
