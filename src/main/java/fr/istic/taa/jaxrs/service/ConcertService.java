@@ -8,10 +8,11 @@ import fr.istic.taa.jaxrs.dto.ConcertUpdateDto;
 import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.QueryParam;
 
+import java.util.Date;
 import java.util.List;
 
 public class ConcertService {
-    private final static ConcertDao concertDao = new ConcertDao();
+    private static final ConcertDao concertDao = new ConcertDao();
 
     private  Concert fromDtoToConcertMapper(ConcertBaseDto concertCreateDto,Concert concert)
     {
@@ -67,5 +68,21 @@ public class ConcertService {
 
     public List<Concert> findByMaxPrice(Long maxPrice) {
         return concertDao.findByMaxPrice(maxPrice);
+    }
+
+    public List<Concert> findByDate(Date date) {
+        return concertDao.findByDate(date);
+    }
+
+    public List<Concert> findAllOrderByPopularity() {
+        return concertDao.findAllOrderByPopularity();
+    }
+
+    public List<Concert> findAllOrderByPrice() {
+        return concertDao.findAllOrderByPrice();
+    }
+
+    public List<Concert> findAllOrderByDate() {
+        return concertDao.findAllOrderByDate();
     }
 }

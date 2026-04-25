@@ -4,6 +4,7 @@ import fr.istic.taa.jaxrs.domain.Concert;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
+import java.util.Date;
 
 import java.util.List;
 
@@ -45,5 +46,26 @@ public class ConcertDao extends AbstractJpaDao<Long, Concert> {
         Root<Concert> root = cq.from(Concert.class);
         cq.select(root).where(cb.lessThanOrEqualTo(root.get("price"), maxPrice));
         return entityManager.createQuery(cq).getResultList();
+    }
+
+    public List<Concert> findByDate(Date date) {
+        return entityManager.createNamedQuery("Concert.findByDate", Concert.class)
+                .setParameter("date", date)
+                .getResultList();
+    }
+
+    public List<Concert> findAllOrderByPopularity() {
+        return entityManager.createNamedQuery("Concert.findAllOrderByPopularity", Concert.class)
+                .getResultList();
+    }
+
+    public List<Concert> findAllOrderByPrice() {
+        return entityManager.createNamedQuery("Concert.findAllOrderByPrice", Concert.class)
+                .getResultList();
+    }
+
+    public List<Concert> findAllOrderByDate() {
+        return entityManager.createNamedQuery("Concert.findAllOrderByDate", Concert.class)
+                .getResultList();
     }
 }

@@ -5,17 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c34f434d-080f-43db-ba81-5afb68a8cf5b" name="Changes" comment="ajout de l'extends AbstractJpaDao aux classes Dao">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/NotificationResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/TicketResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/NotificationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/TicketService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.lck" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/TestApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/NotificationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/NotificationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.script" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ConcertDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ConcertDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Concert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Concert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/ConcertResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/ConcertResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/TestApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/TestApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/ConcertDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/ConcertDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Concert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Concert.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/rest/ConcertResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/rest/ConcertResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ConcertService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ConcertService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,35 +60,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.JpaTest.executor": "Run",
-    "Application.RestServer.executor": "Run",
-    "JUnit.fr.istic.taa.jaxrs.domain in jaxrs-example.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Shell Script.run-hsqldb-server.sh.executor": "Run",
-    "Shell Script.show-hsqldb.sh.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "develop",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tdiop/JaxRSOpenAPI",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JpaTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RestServer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.fr.istic.taa.jaxrs.domain in jaxrs-example.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Shell Script.run-hsqldb-server.sh.executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.show-hsqldb.sh.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tdiop/JaxRSOpenAPI&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="fr.istic.taa.jaxrs.domain" />
@@ -218,7 +220,8 @@
       <workItem from="1777069095779" duration="1828000" />
       <workItem from="1777113045746" duration="3733000" />
       <workItem from="1777117415203" duration="3777000" />
-      <workItem from="1777122788862" duration="11576000" />
+      <workItem from="1777122788862" duration="13562000" />
+      <workItem from="1777140755345" duration="2430000" />
     </task>
     <task id="LOCAL-00001" summary="entity add">
       <option name="closed" value="true" />

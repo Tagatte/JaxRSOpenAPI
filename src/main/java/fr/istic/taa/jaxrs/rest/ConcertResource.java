@@ -14,6 +14,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 
+import java.util.Date;
 import java.util.List;
 
 @Path("/concerts")
@@ -144,5 +145,47 @@ public class ConcertResource {
             @Parameter(description = "Prix maximum en euros", required = true)
             @QueryParam("price") Long maxPrice) {
         return concertService.findByMaxPrice(maxPrice);
+    }
+
+    @GET
+    @Path("/sortByPopularity")
+    @Operation(summary = "Trier par popularité", description = "Retourne les concerts triés par popularité décroissante")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Concerts triés par popularité")
+    })
+    public List<Concert> getConcertsOrderByPopularity() {
+        return concertService.findAllOrderByPopularity();
+    }
+
+    @GET
+    @Path("/sortByPrice")
+    @Operation(summary = "Trier par prix", description = "Retourne les concerts triés par prix croissant")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Concerts triés par prix")
+    })
+    public List<Concert> getConcertsOrderByPrice() {
+        return concertService.findAllOrderByPrice();
+    }
+
+    @GET
+    @Path("/sortByDate")
+    @Operation(summary = "Trier par date", description = "Retourne les concerts triés par date croissante")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Concerts triés par date")
+    })
+    public List<Concert> getConcertsOrderByDate() {
+        return concertService.findAllOrderByDate();
+    }
+
+    @GET
+    @Path("/date")
+    @Operation(summary = "Rechercher par date", description = "Retourne les concerts à une date spécifique")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Concerts trouvés pour cette date")
+    })
+    public List<Concert> getConcertsByDate(
+            @Parameter(description = "Date au format yyyy-MM-dd", required = true)
+            @QueryParam("q") Date date) {
+        return concertService.findByDate(date);
     }
 }
