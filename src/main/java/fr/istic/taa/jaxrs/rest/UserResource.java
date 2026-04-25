@@ -17,7 +17,7 @@ public class UserResource {
 
     @GET
     @Path("/")
-    
+
     public List<User> getAllUsers(){
         return userService.getAllUsers();
     }

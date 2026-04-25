@@ -18,8 +18,8 @@ public class AdminService {
 
     private Admin fromDtoToAdminMapper(PersonBaseDto personBaseDto, Admin admin)
     {
-        admin.setFirstName(personBaseDto.getFirstName());
-        admin.setLastName(personBaseDto.getLastName());
+        admin.setFirstname(personBaseDto.getFirstname());
+        admin.setLastname(personBaseDto.getLastname());
         return admin;
     }
 

@@ -18,8 +18,8 @@ public class UserService {
 
     private User fromDtoToUserMapper(PersonBaseDto personBaseDto, User user)
     {
-        user.setFirstName(personBaseDto.getFirstName());
-        user.setLastName(personBaseDto.getLastName());
+        user.setFirstname(personBaseDto.getFirstname());
+        user.setLastname(personBaseDto.getLastname());
         return user;
     }
 

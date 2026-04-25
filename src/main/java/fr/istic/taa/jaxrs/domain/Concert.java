@@ -145,6 +145,7 @@ public class Concert implements Serializable {
         this.isDeleted = isDeleted;
     }
 
+    @Temporal(TemporalType.DATE)
     public Date getValidationDate() {
         return validationDate;
     }

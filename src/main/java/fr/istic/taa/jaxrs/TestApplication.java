@@ -22,13 +22,16 @@ import java.util.Set;
 import fr.istic.taa.jaxrs.rest.ConcertResource;
 import fr.istic.taa.jaxrs.rest.PetResource;
 import fr.istic.taa.jaxrs.rest.UserResource;
+import fr.istic.taa.jaxrs.rest.ArtistResource;
+import fr.istic.taa.jaxrs.rest.OrganizerResource;
+import fr.istic.taa.jaxrs.rest.AdminResource;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;
 
 @ApplicationPath("/")
 public class TestApplication extends Application {
-	
+
 
     @Override
     public Set<Class<?>> getClasses() {
@@ -39,8 +42,11 @@ public class TestApplication extends Application {
         clazzes.add(PetResource.class);
         clazzes.add(UserResource.class);
         clazzes.add(ConcertResource.class);
-//        clazzes.add(AcceptHeaderOpenApiResource.class);
-         
+        clazzes.add(ArtistResource.class);
+        clazzes.add(OrganizerResource.class);
+        clazzes.add(AdminResource.class);
+//      clazzes.add(AcceptHeaderOpenApiResource.class);
+
 
         return clazzes;
     }

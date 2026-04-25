@@ -15,8 +15,8 @@ public class ArtistService {
 
     private Artist fromDtoToArtistMapper(PersonBaseDto personBaseDto, Artist artist)
     {
-        artist.setFirstName(personBaseDto.getFirstName());
-        artist.setLastName(personBaseDto.getLastName());
+        artist.setFirstname(personBaseDto.getFirstname());
+        artist.setLastname(personBaseDto.getLastname());
         return artist;
     }
 

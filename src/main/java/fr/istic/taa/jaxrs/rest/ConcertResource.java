@@ -26,8 +26,9 @@ public class ConcertResource {
 
     @GET
     @Path("/search")
-    public List<Concert> searchConcerts(@QueryParam("query") String name) {
-        return null;
+    public List<Concert> searchConcerts(@QueryParam("q") String searchQ) {
+
+        return concertService.searchConcerts(searchQ);
     }
 
     @GET
@@ -53,6 +54,5 @@ public class ConcertResource {
     public void deleteConcert(@PathParam("id") long id) {
         concertService.deleteConcert(id);
     }
-
 
 }

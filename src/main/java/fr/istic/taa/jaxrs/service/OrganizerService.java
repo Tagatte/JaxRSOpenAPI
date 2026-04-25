@@ -18,8 +18,8 @@ public class OrganizerService {
 
     private Organizer fromDtoToOrganizerMapper(PersonBaseDto personBaseDto, Organizer organizer)
     {
-        organizer.setFirstName(personBaseDto.getFirstName());
-        organizer.setLastName(personBaseDto.getLastName());
+        organizer.setFirstname(personBaseDto.getFirstname());
+        organizer.setLastname(personBaseDto.getLastname());
         return organizer;
     }
 

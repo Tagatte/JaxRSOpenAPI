@@ -9,10 +9,10 @@ public abstract class PersonBaseDto {
     private String email;
     @NotNull
     @NotEmpty
-    private String firstName;
+    private String firstname;
     @NotNull
     @NotEmpty
-    private String lastName;
+    private String lastname;
     @NotNull
     @NotEmpty
     private String phone;
@@ -25,20 +25,20 @@ public abstract class PersonBaseDto {
         this.email = email;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastname(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getPhone() {

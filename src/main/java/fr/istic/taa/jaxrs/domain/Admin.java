@@ -13,16 +13,8 @@ import java.util.Collection;
 @DiscriminatorValue("Admin")
 public class Admin extends Person implements Serializable {
 
-    private Long id;
     private Collection<Concert> concerts;
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    @Id
-    public Long getId() {
-        return id;
-    }
 
     @OneToMany(mappedBy = "admin")
     public Collection<Concert> getConcerts() {

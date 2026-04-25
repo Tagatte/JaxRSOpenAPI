@@ -5,45 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c34f434d-080f-43db-ba81-5afb68a8cf5b" name="Changes" comment="ajout de l'extends AbstractJpaDao aux classes Dao">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jaxrs-example.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/ConcertBaseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/ConcertCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/ConcertUpdateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/PersonBaseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/PersonCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/PersonUpdateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/AdminResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/ArtistResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/ConcertResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/OrganizerResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ArtistService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/OrganizerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dto/ConcertBaseDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dto/ConcertCreateDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dto/ConcertUpdateDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/rest/ConcertResource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ConcertService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/test.lck" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.lck" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/test.script" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/show-hsqldb.bat" beforeDir="false" afterPath="$PROJECT_DIR$/show-hsqldb.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/show-hsqldb.sh" beforeDir="false" afterPath="$PROJECT_DIR$/show-hsqldb.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/TestApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/AbstractJpaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/AbstractJpaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/AdminDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/AdminDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ArtistDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ArtistDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ConcertDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ConcertDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/OrganizerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/OrganizerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/TicketDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Artist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Concert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Concert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/JpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/JpaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Organizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Organizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/PersonBaseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/PersonBaseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/ConcertResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/ConcertResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/UserResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ArtistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ArtistService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/OrganizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/OrganizerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/TestApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/TestApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/ConcertDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/ConcertDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/TicketDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/TicketDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Concert.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Concert.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/JpaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/JpaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Ticket.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/Ticket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/rest/ConcertResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/rest/ConcertResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/rest/UserResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/rest/UserResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ConcertService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ConcertService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +75,9 @@
     &quot;url&quot;: &quot;https://github.com/Tagatte/JaxRSOpenAPI.git&quot;,
     &quot;accountId&quot;: &quot;ef562648-8f75-4a36-965f-b2f61ca56dd2&quot;
   }
+}</component>
+  <component name="HttpClientOnboardingState">{
+  &quot;isOnboardingCommentShown&quot;: true
 }</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -120,7 +127,7 @@
       <recent name="fr.istic.taa.jaxrs.rest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JpaTest">
+  <component name="RunManager" selected="Application.RestServer">
     <configuration name="JpaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.istic.taa.jaxrs.domain.JpaTest" />
       <module name="jaxrs-example" />
@@ -193,8 +200,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JpaTest" />
         <item itemvalue="Application.RestServer" />
+        <item itemvalue="Application.JpaTest" />
         <item itemvalue="JUnit.fr.istic.taa.jaxrs.domain in jaxrs-example" />
       </list>
     </recent_temporary>
@@ -241,6 +248,9 @@
       <workItem from="1775489580034" duration="2799000" />
       <workItem from="1776331554904" duration="5968000" />
       <workItem from="1777069095779" duration="1828000" />
+      <workItem from="1777113045746" duration="3733000" />
+      <workItem from="1777117415203" duration="3777000" />
+      <workItem from="1777122788862" duration="6748000" />
     </task>
     <task id="LOCAL-00001" summary="entity add">
       <option name="closed" value="true" />
