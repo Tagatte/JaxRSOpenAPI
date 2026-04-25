@@ -73,4 +73,25 @@ public class TicketService {
         ticketDao.update(ticket);
         return ticket;
     }
+
+    // Tickets par utilisateur
+    public List<Ticket> getTicketsByUser(long userId) {
+        User user = userDao.findOne(userId);
+        if (user == null) throw new NotFoundException("User non trouvé");
+        return ticketDao.findByUser(userId);
+    }
+
+    // Transfert de ticket
+    public Ticket transferTicket(long ticketId, Long newUserId) {
+        Ticket ticket = getTicket(ticketId);
+        if (ticket == null) throw new NotFoundException("Ticket non trouvé");
+        if (ticket.isCanceled()) throw new BadRequestException("Ticket annulé, impossible de transférer");
+
+        User newUser = userDao.findOne(newUserId);
+        if (newUser == null) throw new NotFoundException("Nouvel utilisateur non trouvé");
+
+        ticket.setUser(newUser);
+        ticketDao.update(ticket);
+        return ticket;
+    }
 }

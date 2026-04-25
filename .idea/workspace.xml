@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c34f434d-080f-43db-ba81-5afb68a8cf5b" name="Changes" comment="ajout de l'extends AbstractJpaDao aux classes Dao">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/TicketCreateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/TicketTransferDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/TicketDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/TicketResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/TicketResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/TicketService.java" afterDir="false" />
     </list>
@@ -215,7 +214,7 @@
       <workItem from="1777113045746" duration="3733000" />
       <workItem from="1777117415203" duration="3777000" />
       <workItem from="1777122788862" duration="13562000" />
-      <workItem from="1777140755345" duration="4168000" />
+      <workItem from="1777140755345" duration="6271000" />
     </task>
     <task id="LOCAL-00001" summary="entity add">
       <option name="closed" value="true" />
