@@ -48,9 +48,8 @@
 				value="jdbc:mysql://localhost/mydatabase" />
 			<property name="jakarta.persistence.jdbc.user" value="tlc" />
 			<property name="jakarta.persistence.jdbc.password" value="tlc" />
-			<property
-				name="jakarta.persistence.schema-generation.database.action"
-				value="update" />
+            <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
 			<property name="jakarta.persistence.dialect"
 				value="org.hibernate.dialect.MySQL8Dialect" />
 			<property name="hibernate.show_sql" value="true" />
