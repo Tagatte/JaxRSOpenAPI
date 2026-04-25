@@ -55,4 +55,22 @@ public class ConcertResource {
         concertService.deleteConcert(id);
     }
 
+    @GET
+    @Path("/location")
+    public List<Concert> getConcertsByLocation(@QueryParam("q") String location) {
+        return concertService.findByLocation(location);
+    }
+
+    @GET
+    @Path("/validated")
+    public List<Concert> getValidatedConcerts() {
+        return concertService.findValidated();
+    }
+
+    @GET
+    @Path("/maxprice")
+    public List<Concert> getConcertsByMaxPrice(@QueryParam("price") Long maxPrice) {
+        return concertService.findByMaxPrice(maxPrice);
+    }
+
 }

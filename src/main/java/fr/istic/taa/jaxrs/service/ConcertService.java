@@ -56,4 +56,16 @@ public class ConcertService {
     public void deleteConcert(Long id) {
         concertDao.deleteById(id);
     }
+
+    public List<Concert> findByLocation(String location) {
+        return concertDao.findByLocation(location);
+    }
+
+    public List<Concert> findValidated() {
+        return concertDao.findValidated();
+    }
+
+    public List<Concert> findByMaxPrice(Long maxPrice) {
+        return concertDao.findByMaxPrice(maxPrice);
+    }
 }

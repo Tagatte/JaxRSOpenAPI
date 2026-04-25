@@ -5,8 +5,17 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Concert.findByLocation",
+                query = "SELECT c FROM Concert c WHERE c.location = :location"),
+        @NamedQuery(name = "Concert.findValidated",
+                query = "SELECT c FROM Concert c WHERE c.isValidated = true")
+})
+
 public class Concert implements Serializable {
     private Long id;
     private String name;
@@ -197,4 +206,5 @@ public class Concert implements Serializable {
     public void setNotifications(Collection<Notification> notifications) {
         this.notifications = notifications;
     }
+
 }
