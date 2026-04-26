@@ -5,8 +5,25 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Concert.findValidated",
+                query = "SELECT c FROM Concert c WHERE c.isValidated = true"),
+        @NamedQuery(name = "Concert.findByLocation",
+                query = "SELECT c FROM Concert c WHERE c.location = :location"),
+        @NamedQuery(name = "Concert.findByDate",
+                query = "SELECT c FROM Concert c WHERE c.date = :date"),
+        @NamedQuery(name = "Concert.findAllOrderByPopularity",
+                query = "SELECT c FROM Concert c ORDER BY c.popularity DESC"),
+        @NamedQuery(name = "Concert.findAllOrderByPrice",
+                query = "SELECT c FROM Concert c ORDER BY c.price ASC"),
+        @NamedQuery(name = "Concert.findAllOrderByDate",
+                query = "SELECT c FROM Concert c ORDER BY c.date ASC")
+})
+
 public class Concert implements Serializable {
     private Long id;
     private String name;
@@ -16,8 +33,8 @@ public class Concert implements Serializable {
     private String location;
     private Long price;
     private String musicalGenre;
-    private String popularity;
-    private Long placeNumber;
+    private int popularity;
+    private int placeNumber;
     private String description;
     private boolean isCanceled;
     private boolean isDeleted;
@@ -97,19 +114,19 @@ public class Concert implements Serializable {
         this.musicalGenre = musicalGenre;
     }
 
-    public String getPopularity() {
+    public int getPopularity() {
         return popularity;
     }
 
-    public void setPopularity(String popularity) {
+    public void setPopularity(int popularity) {
         this.popularity = popularity;
     }
 
-    public Long getPlaceNumber() {
+    public int getPlaceNumber() {
         return placeNumber;
     }
 
-    public void setPlaceNumber(Long placeNumber) {
+    public void setPlaceNumber(int placeNumber) {
         this.placeNumber = placeNumber;
     }
 
@@ -145,6 +162,7 @@ public class Concert implements Serializable {
         this.isDeleted = isDeleted;
     }
 
+    @Temporal(TemporalType.DATE)
     public Date getValidationDate() {
         return validationDate;
     }
@@ -196,4 +214,5 @@ public class Concert implements Serializable {
     public void setNotifications(Collection<Notification> notifications) {
         this.notifications = notifications;
     }
+
 }

@@ -18,45 +18,47 @@ public abstract class AbstractJpaDao<K, T extends Serializable> implements IGene
 		this.entityManager = EntityManagerHelper.getEntityManager();
 	}
 
-    public AbstractJpaDao(Class<T> clazz) {
-        this.entityManager = EntityManagerHelper.getEntityManager();
-        this.clazz = requireNonNull(clazz);
-    }
+	public AbstractJpaDao(Class<T> clazz) {
+		this.entityManager = EntityManagerHelper.getEntityManager();
+		this.clazz = requireNonNull(clazz);
+	}
+
 	public void setClazz(Class<T> clazzToSet) {
 		this.clazz = clazzToSet;
 	}
 
 	public T findOne(K id) {
+		entityManager.clear();
 		return entityManager.find(clazz, id);
 	}
 
 	public List<T> findAll() {
-		return entityManager.createQuery("select e from " + clazz.getName() + " as e",clazz).getResultList();
+		return entityManager.createQuery("select e from " + clazz.getName() + " as e", clazz).getResultList();
 	}
 
 	public void save(T entity) {
 		EntityTransaction t = this.entityManager.getTransaction();
-		t.begin();
+		boolean isActive = t.isActive();
+		if (!isActive) t.begin();
 		entityManager.persist(entity);
-		t.commit();
-
+		if (!isActive) t.commit();
 	}
 
 	public T update(final T entity) {
 		EntityTransaction t = this.entityManager.getTransaction();
-		t.begin();
+		boolean isActive = t.isActive();
+		if (!isActive) t.begin();
 		T res = entityManager.merge(entity);
-		t.commit();
+		if (!isActive) t.commit();
 		return res;
-
 	}
 
 	public void delete(T entity) {
 		EntityTransaction t = this.entityManager.getTransaction();
-		t.begin();
-		entityManager.remove(entity);
-		t.commit();
-
+		boolean isActive = t.isActive();
+		if (!isActive) t.begin();
+		entityManager.remove(entityManager.contains(entity) ? entity : entityManager.merge(entity));
+		if (!isActive) t.commit();
 	}
 
 	public void deleteById(K entityId) {
