@@ -9,17 +9,9 @@ import java.util.Collection;
 @DiscriminatorValue("Organizer")
 public class Organizer extends Person implements Serializable {
 
-    private Long id;
-    private Collection<Concert> concerts;
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
+    private Collection<Concert> concerts;
+
 
     public Organizer() {}
 

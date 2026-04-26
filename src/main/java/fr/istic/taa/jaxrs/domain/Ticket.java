@@ -1,5 +1,6 @@
 package fr.istic.taa.jaxrs.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 
@@ -82,6 +83,7 @@ public class Ticket implements Serializable {
         this.refundDate = refundDate;
     }
 
+    @JsonIgnore
     @ManyToOne
     public User getUser() {
         return user;
@@ -90,6 +92,8 @@ public class Ticket implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
+
+    @JsonIgnore
     @ManyToOne
     public Concert getConcert() {
         return concert;

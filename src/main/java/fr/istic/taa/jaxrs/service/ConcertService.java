@@ -8,12 +8,13 @@ import fr.istic.taa.jaxrs.dto.ConcertUpdateDto;
 import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.QueryParam;
 
+import java.util.Date;
 import java.util.List;
 
 public class ConcertService {
-    private final static ConcertDao concertDao = new ConcertDao();
+    private static final ConcertDao concertDao = new ConcertDao();
 
-    public  Concert fromDtoToConcertMapper(ConcertBaseDto concertCreateDto,Concert concert)
+    private  Concert fromDtoToConcertMapper(ConcertBaseDto concertCreateDto,Concert concert)
     {
         concert.setName(concertCreateDto.getName());
         concert.setDescription(concertCreateDto.getDescription());
@@ -32,6 +33,7 @@ public class ConcertService {
     public Concert getConcert(Long id) {
         return concertDao.findOne(id);
     }
+
     public Concert createConcert(ConcertCreateDto concertCreateDto) {
         Concert concert = fromDtoToConcertMapper(concertCreateDto, new Concert());
         concertDao.save(concert);
@@ -40,7 +42,7 @@ public class ConcertService {
 
     public Concert updateConcert( long id, ConcertUpdateDto concertUpdateDto) {
         if (!(id == concertUpdateDto.getId())) {
-            throw new BadRequestException("Concert non trouvé");
+            throw new BadRequestException("Concert non accessible");
         }
         Concert concert = fromDtoToConcertMapper(concertUpdateDto,getConcert(id));
         concertDao.update(concert);
@@ -54,5 +56,33 @@ public class ConcertService {
 
     public void deleteConcert(Long id) {
         concertDao.deleteById(id);
+    }
+
+    public List<Concert> findByLocation(String location) {
+        return concertDao.findByLocation(location);
+    }
+
+    public List<Concert> findValidated() {
+        return concertDao.findValidated();
+    }
+
+    public List<Concert> findByMaxPrice(Long maxPrice) {
+        return concertDao.findByMaxPrice(maxPrice);
+    }
+
+    public List<Concert> findByDate(Date date) {
+        return concertDao.findByDate(date);
+    }
+
+    public List<Concert> findAllOrderByPopularity() {
+        return concertDao.findAllOrderByPopularity();
+    }
+
+    public List<Concert> findAllOrderByPrice() {
+        return concertDao.findAllOrderByPrice();
+    }
+
+    public List<Concert> findAllOrderByDate() {
+        return concertDao.findAllOrderByDate();
     }
 }

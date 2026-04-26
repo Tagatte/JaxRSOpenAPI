@@ -27,31 +27,31 @@ public class JpaTest {
 
                 // 1. Création d'un ADMINISTRATEUR (Hérite de Person)
                 Admin admin = new Admin();
-                admin.setFirstName("Marc");
-                admin.setLastName("Admin");
+                admin.setFirstname("Marc");
+                admin.setLastname("Admin");
                 admin.setEmail("admin@festival.com");
                 admin.setPhone("0600000001");
                 manager.persist(admin);
 
                 // 2. Création d'un ORGANISATEUR (Hérite de Person)
                 Organizer organizer = new Organizer();
-                organizer.setFirstName("Julie");
-                organizer.setLastName("Events");
+                organizer.setFirstname("Julie");
+                organizer.setLastname("Events");
                 organizer.setEmail("contact@prod.com");
                 organizer.setPhone("0600000002");
                 manager.persist(organizer);
 
                 // 3. Création d'un ARTISTE (Hérite de Person)
                 Artist artist = new Artist();
-                artist.setFirstName("Stromae");
-                artist.setLastName("Paul"); // Nom de famille fictif pour le test
+                artist.setFirstname("Stromae");
+                artist.setLastname("Paul"); // Nom de famille fictif pour le test
                 artist.setEmail("artiste@music.be");
                 manager.persist(artist);
 
                 // 4. Création d'un UTILISATEUR / CLIENT (Hérite de Person)
                 User user = new User();
-                user.setFirstName("Jean");
-                user.setLastName("Dupont");
+                user.setFirstname("Jean");
+                user.setLastname("Dupont");
                 user.setEmail("jean.dupont@email.com");
                 manager.persist(user);
 

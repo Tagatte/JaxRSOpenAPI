@@ -5,8 +5,25 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Concert.findValidated",
+                query = "SELECT c FROM Concert c WHERE c.isValidated = true"),
+        @NamedQuery(name = "Concert.findByLocation",
+                query = "SELECT c FROM Concert c WHERE c.location = :location"),
+        @NamedQuery(name = "Concert.findByDate",
+                query = "SELECT c FROM Concert c WHERE c.date = :date"),
+        @NamedQuery(name = "Concert.findAllOrderByPopularity",
+                query = "SELECT c FROM Concert c ORDER BY c.popularity DESC"),
+        @NamedQuery(name = "Concert.findAllOrderByPrice",
+                query = "SELECT c FROM Concert c ORDER BY c.price ASC"),
+        @NamedQuery(name = "Concert.findAllOrderByDate",
+                query = "SELECT c FROM Concert c ORDER BY c.date ASC")
+})
+
 public class Concert implements Serializable {
     private Long id;
     private String name;
@@ -197,4 +214,5 @@ public class Concert implements Serializable {
     public void setNotifications(Collection<Notification> notifications) {
         this.notifications = notifications;
     }
+
 }
