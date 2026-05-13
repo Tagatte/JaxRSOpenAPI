@@ -12,11 +12,14 @@ import jakarta.ws.rs.PathParam;
 import java.util.List;
 
 public class ArtistService {
-
-    private Artist fromDtoToArtistMapper(PersonBaseDto personBaseDto, Artist artist)
-    {
+    public int countArtists(){
+        return artistDao.countArtists();
+    }
+    private Artist fromDtoToArtistMapper(PersonBaseDto personBaseDto, Artist artist) {
         artist.setFirstname(personBaseDto.getFirstname());
         artist.setLastname(personBaseDto.getLastname());
+        artist.setEmail(personBaseDto.getEmail());
+        artist.setPhone(personBaseDto.getPhone());
         return artist;
     }
 

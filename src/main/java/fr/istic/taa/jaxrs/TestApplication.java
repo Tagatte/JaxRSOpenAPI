@@ -42,6 +42,7 @@ public class TestApplication extends Application {
         clazzes.add(AdminResource.class);
         clazzes.add(TicketResource.class);
         clazzes.add(NotificationResource.class);
+        clazzes.add(AdminStatsResource.class);
 //      clazzes.add(AcceptHeaderOpenApiResource.class);
 
 
