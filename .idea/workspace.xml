@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c34f434d-080f-43db-ba81-5afb68a8cf5b" name="Changes" comment="ajout de l'extends AbstractJpaDao aux classes Dao">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/TicketTransferDto.java" afterDir="false" />
+    <list default="true" id="c34f434d-080f-43db-ba81-5afb68a8cf5b" name="Changes" comment="Merge branch 'develop' of https://github.com/Tagatte/JaxRSOpenAPI into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.lck" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.lck" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.log" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.script" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/show-hsqldb.bat" beforeDir="false" afterPath="$PROJECT_DIR$/show-hsqldb.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/show-hsqldb.sh" beforeDir="false" afterPath="$PROJECT_DIR$/show-hsqldb.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/TicketDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Concert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Concert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/JpaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/JpaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/TicketCreateDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/TicketCreateDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/TicketTransferDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/TicketTransferDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/TicketResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/TicketResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +103,7 @@
       <recent name="fr.istic.taa.jaxrs.rest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RestServer">
+  <component name="RunManager" selected="Application.JpaTest">
     <configuration name="JpaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.istic.taa.jaxrs.domain.JpaTest" />
       <module name="jaxrs-example" />
@@ -163,8 +176,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RestServer" />
         <item itemvalue="Application.JpaTest" />
+        <item itemvalue="Application.RestServer" />
         <item itemvalue="JUnit.fr.istic.taa.jaxrs.domain in jaxrs-example" />
       </list>
     </recent_temporary>
@@ -215,6 +228,11 @@
       <workItem from="1777117415203" duration="3777000" />
       <workItem from="1777122788862" duration="13562000" />
       <workItem from="1777140755345" duration="6271000" />
+      <workItem from="1777320774433" duration="1498000" />
+      <workItem from="1777754282753" duration="294000" />
+      <workItem from="1777926869480" duration="3023000" />
+      <workItem from="1778373971537" duration="7324000" />
+      <workItem from="1778613268233" duration="29716000" />
     </task>
     <task id="LOCAL-00001" summary="entity add">
       <option name="closed" value="true" />
@@ -256,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772301390527</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge branch 'develop' of https://github.com/Tagatte/JaxRSOpenAPI into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1777214539908</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777214539908</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

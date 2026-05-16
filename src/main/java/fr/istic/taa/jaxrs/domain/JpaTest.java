@@ -1,112 +1,106 @@
 package fr.istic.taa.jaxrs.domain;
 
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import java.util.Date;
+import java.util.ArrayList;
 
 public class JpaTest {
 
+    private EntityManager manager;
 
-	private EntityManager manager;
+    public JpaTest(EntityManager manager) {
+        this.manager = manager;
+    }
 
-	public JpaTest(EntityManager manager) {
-		this.manager = manager;
-	}
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-			EntityManager manager = EntityManagerHelper.getEntityManager();
+    public static void main(String[] args) {
+        // 1. Récupération du manager via l'Helper
+        EntityManager manager = EntityManagerHelper.getEntityManager();
+        JpaTest test = new JpaTest(manager);
 
-		JpaTest test = new JpaTest(manager);
+        // 2. Exécution de la persistance
+        test.createData();
 
-		EntityTransaction tx = manager.getTransaction();
-		tx.begin();
-		try {
+        // 3. Fermeture propre des ressources
+        manager.close();
+        EntityManagerHelper.closeEntityManagerFactory();
+        System.out.println("Données persistées avec succès. Fin du test.");
+    }
 
+    public void createData() {
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
 
-                // 1. Création d'un ADMINISTRATEUR (Hérite de Person)
-                Admin admin = new Admin();
-                admin.setFirstname("Marc");
-                admin.setLastname("Admin");
-                admin.setEmail("admin@festival.com");
-                admin.setPhone("0600000001");
-                manager.persist(admin);
+        try {
+            // --- 1. PERSONNES (Héritage) ---
+            Admin admin = new Admin();
+            admin.setFirstname("Marc");
+            admin.setLastname("Admin");
+            admin.setEmail("admin@festival.com");
+            manager.persist(admin);
 
-                // 2. Création d'un ORGANISATEUR (Hérite de Person)
-                Organizer organizer = new Organizer();
-                organizer.setFirstname("Julie");
-                organizer.setLastname("Events");
-                organizer.setEmail("contact@prod.com");
-                organizer.setPhone("0600000002");
-                manager.persist(organizer);
+            Organizer organizer = new Organizer();
+            organizer.setFirstname("Julie");
+            organizer.setLastname("Events");
+            organizer.setEmail("contact@prod.com");
+            manager.persist(organizer);
 
-                // 3. Création d'un ARTISTE (Hérite de Person)
-                Artist artist = new Artist();
-                artist.setFirstname("Stromae");
-                artist.setLastname("Paul"); // Nom de famille fictif pour le test
-                artist.setEmail("artiste@music.be");
-                manager.persist(artist);
+            Artist artist = new Artist();
+            artist.setFirstname("Stromae");
+            artist.setLastname("Paul");
+            artist.setEmail("artiste@music.be");
+            manager.persist(artist);
 
-                // 4. Création d'un UTILISATEUR / CLIENT (Hérite de Person)
-                User user = new User();
-                user.setFirstname("Jean");
-                user.setLastname("Dupont");
-                user.setEmail("jean.dupont@email.com");
-                manager.persist(user);
+            User user = new User();
+            user.setFirstname("Jean");
+            user.setLastname("Dupont");
+            user.setEmail("jean.dupont@email.com");
+            manager.persist(user);
 
-                // 5. Création d'un CONCERT (Lié à l'Artiste)
-                Concert concert = new Concert();
-                concert.setName("Tournée Multitude");
-                concert.setDate(new java.util.Date());
-                concert.setStartTime(20); // 20h
-                concert.setEndTime(23);   // 23h
-                concert.setPrice(75L);
-                concert.setMusicalGenre("Pop");
-                concert.setLocation("Bercy, Paris");
-                concert.setPlaceNumber(15000);
-                concert.setPopularity(1);
-                concert.setIsCanceled(false);
-                concert.setIsDeleted(false);
-                concert.setIsValidated(true);
-                // On lie le concert à l'artiste créé plus haut
-                // concert.setArtist(artist);
-                manager.persist(concert);
+            // --- 2. CONCERT ---
+            Concert concert = new Concert();
+            concert.setName("Tournée Multitude");
+            concert.setDate(new Date());
+            concert.setStartTime("20h");
+            concert.setEndTime("23h");
+            concert.setPrice(75L);
+            concert.setMusicalGenre("Pop");
+            concert.setLocation("Bercy, Paris");
+            concert.setPlaceNumber(100);
+            concert.setAvailableTickets(100);
+            concert.setIsValidated(true);
 
-                // 6. Création d'un TICKET (Lié au Concert et à l'Utilisateur)
-                Ticket ticket = new Ticket();
-                ticket.setPrice(75L);
-                ticket.setDate(new java.util.Date());
-                ticket.setCanceled(false);
-                ticket.setRefunded(false);
-                // On lie le ticket au concert et à l'utilisateur
-                // ticket.setConcert(concert);
-                // ticket.setUser(user);
-                manager.persist(ticket);
+            // Si Concert a une liste d'artistes (ManyToMany)
+            if (concert.getArtists() == null) concert.setArtists(new ArrayList<>());
+            concert.getArtists().add(artist);
 
-                // 7. Création d'une NOTIFICATION (Généralement liée à une Personne)
-                Notification notification = new Notification();
-                notification.setContent("Votre commande pour le concert " + concert.getName() + " est validée.");
-                notification.setType("INFO_ACHAT");
-                // Si votre classe Notification a une relation vers Person :
-                // notification.setPerson(user);
-                manager.persist(notification);
+            manager.persist(concert);
 
-                System.out.println("Toutes les entités (sauf Dept/Emp) ont été persistées avec succès.");
+            // --- 3. TICKET (Liaison User <-> Concert) ---
+            Ticket ticket = new Ticket();
+            ticket.setPrice(concert.getPrice());
+            ticket.setQuantity(1);
+            ticket.setBuyerEmail(user.getEmail()); // L'email qui servira à la recherche Angular
+            ticket.setConcert(concert);
+            ticket.setDate(new java.util.Date());
+            ticket.setStatus("confirmed"); // Statut initial pour l'affichage en vert (Valide)
+            ticket.setCanceled(false);
+            ticket.setRefunded(false);
 
+            manager.persist(ticket);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		tx.commit();
+            // --- 4. NOTIFICATION ---
+            Notification notification = new Notification();
+            notification.setContent("Votre commande pour " + concert.getName() + " est validée.");
+            notification.setType("INFO_ACHAT");
+            // notification.setPerson(user); // Si lié à une Person
 
-			
-   	 manager.close();
-		EntityManagerHelper.closeEntityManagerFactory();
-		System.out.println(".. done");
-	}
+            manager.persist(notification);
 
-
-
-
+            tx.commit();
+        } catch (Exception e) {
+            if (tx.isActive()) tx.rollback();
+            e.printStackTrace();
+        }
+    }
 }

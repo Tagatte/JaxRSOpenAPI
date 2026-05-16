@@ -17,10 +17,10 @@ public class User extends Person implements Serializable {
     public User() {}
 
 
-    @OneToMany(mappedBy = "user")
-    public Collection<Ticket> getTickets() {
-        return tickets;
-    }
+//    @OneToMany(mappedBy = "user")
+//    public Collection<Ticket> getTickets() {
+//        return tickets;
+//    }
 
     public void setTickets(Collection<Ticket> tickets) {
         this.tickets = tickets;

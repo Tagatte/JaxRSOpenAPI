@@ -22,6 +22,10 @@ public class TicketService {
         return ticketDao.findAll();
     }
 
+    public List<Ticket> findByEmail(String email) {
+        return ticketDao.findByEmail(email);
+    }
+
     public Ticket getTicket(long id) {
         return ticketDao.findOne(id);
     }
@@ -31,40 +35,63 @@ public class TicketService {
     }
 
     // Méthode métier — acheter un ticket
-    public Ticket buyTicket(TicketCreateDto ticketCreateDto) {
-        Concert concert = concertDao.findOne(ticketCreateDto.getConcertId());
-        User user = userDao.findOne(ticketCreateDto.getUserId());
-
+    // Méthode métier — acheter un ticket
+    public Ticket buyTicket(TicketCreateDto dto) {
+        Concert concert = concertDao.findOne(dto.getConcertId());
         if (concert == null) throw new NotFoundException("Concert non trouvé");
-        if (user == null) throw new NotFoundException("User non trouvé");
         if (concert.isIsCanceled()) throw new BadRequestException("Concert annulé");
-        if (concert.getPlaceNumber() <= 0) throw new BadRequestException("Plus de places disponibles");
+        if (concert.getAvailableTickets() <= 0) throw new BadRequestException("Complet");
 
         Ticket ticket = new Ticket();
         ticket.setPrice(concert.getPrice());
         ticket.setDate(new Date());
+        ticket.setBuyerEmail(dto.getBuyerEmail());
+        ticket.setQuantity(dto.getQuantity());
+        ticket.setConcert(concert);
+
+        // Initialisation des nouveaux états
+        ticket.setStatus("confirmed"); // État vert dans ton Angular
         ticket.setCanceled(false);
         ticket.setRefunded(false);
-        ticket.setConcert(concert);
-        ticket.setUser(user);
 
-        // Décrémente le nombre de places
-        concert.setPlaceNumber(concert.getPlaceNumber() - 1);
+        concert.setAvailableTickets(concert.getAvailableTickets() - dto.getQuantity());
         concertDao.update(concert);
-
         ticketDao.save(ticket);
         return ticket;
     }
 
-    // Méthode métier — annuler un ticket
     public Ticket cancelTicket(long id) {
         Ticket ticket = getTicket(id);
+        if (ticket == null) throw new NotFoundException("Ticket non trouvé");
+
         ticket.setCanceled(true);
+        ticket.setStatus("cancelled"); // État rouge dans ton Angular
         ticket.setCancelDate(new Date());
         ticketDao.update(ticket);
         return ticket;
     }
 
+    public Ticket transferTicket(long ticketId, String newOwnerEmail) {
+        Ticket ticket = getTicket(ticketId);
+
+        if (ticket == null) throw new NotFoundException("Ticket non trouvé");
+        if (ticket.isCanceled() || "cancelled".equals(ticket.getStatus())) {
+            throw new BadRequestException("Ticket annulé, transfert impossible");
+        }
+
+        // --- Logique d'historique de transfert ---
+        // On sauvegarde qui donne le ticket (l'actuel buyerEmail)
+        ticket.setTransferorEmail(ticket.getBuyerEmail());
+
+        // On met à jour le nouveau propriétaire
+        ticket.setBuyerEmail(newOwnerEmail);
+
+        // On change le statut pour déclencher la couleur violette
+        ticket.setStatus("transferred");
+
+        ticketDao.update(ticket);
+        return ticket;
+    }
     // Méthode métier — rembourser un ticket
     public Ticket refundTicket(long id) {
         Ticket ticket = getTicket(id);
@@ -74,24 +101,4 @@ public class TicketService {
         return ticket;
     }
 
-    // Tickets par utilisateur
-    public List<Ticket> getTicketsByUser(long userId) {
-        User user = userDao.findOne(userId);
-        if (user == null) throw new NotFoundException("User non trouvé");
-        return ticketDao.findByUser(userId);
-    }
-
-    // Transfert de ticket
-    public Ticket transferTicket(long ticketId, Long newUserId) {
-        Ticket ticket = getTicket(ticketId);
-        if (ticket == null) throw new NotFoundException("Ticket non trouvé");
-        if (ticket.isCanceled()) throw new BadRequestException("Ticket annulé, impossible de transférer");
-
-        User newUser = userDao.findOne(newUserId);
-        if (newUser == null) throw new NotFoundException("Nouvel utilisateur non trouvé");
-
-        ticket.setUser(newUser);
-        ticketDao.update(ticket);
-        return ticket;
-    }
 }

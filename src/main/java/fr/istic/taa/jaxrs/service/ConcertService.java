@@ -36,6 +36,7 @@ public class ConcertService {
 
     public Concert createConcert(ConcertCreateDto concertCreateDto) {
         Concert concert = fromDtoToConcertMapper(concertCreateDto, new Concert());
+        concert.setAvailableTickets(concert.getPlaceNumber());
         concertDao.save(concert);
         return concert;
     }
