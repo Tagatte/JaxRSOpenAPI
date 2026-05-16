@@ -16,10 +16,15 @@ import java.util.List;
 
 public class OrganizerService {
 
-    private Organizer fromDtoToOrganizerMapper(PersonBaseDto personBaseDto, Organizer organizer)
-    {
+    public int countOrganizers(){
+        return organizerDao.countOrganizers();
+    }
+
+    private Organizer fromDtoToOrganizerMapper(PersonBaseDto personBaseDto, Organizer organizer) {
         organizer.setFirstname(personBaseDto.getFirstname());
         organizer.setLastname(personBaseDto.getLastname());
+        organizer.setEmail(personBaseDto.getEmail());
+        organizer.setPhone(personBaseDto.getPhone());
         return organizer;
     }
 

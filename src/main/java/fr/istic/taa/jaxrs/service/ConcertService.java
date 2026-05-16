@@ -1,5 +1,6 @@
 package fr.istic.taa.jaxrs.service;
 
+import fr.istic.taa.jaxrs.dao.generic.ArtistDao;
 import fr.istic.taa.jaxrs.dao.generic.ConcertDao;
 import fr.istic.taa.jaxrs.domain.Concert;
 import fr.istic.taa.jaxrs.dto.ConcertBaseDto;
@@ -13,6 +14,10 @@ import java.util.List;
 
 public class ConcertService {
     private static final ConcertDao concertDao = new ConcertDao();
+
+    public int countConcerts(){
+        return concertDao.countConcerts();
+    }
 
     private  Concert fromDtoToConcertMapper(ConcertBaseDto concertCreateDto,Concert concert)
     {

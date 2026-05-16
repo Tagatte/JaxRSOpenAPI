@@ -16,4 +16,12 @@ public class TicketDao extends  AbstractJpaDao<Long, Ticket>{
                 .setParameter("email", email)
                 .getResultList();
     }
+
+    public int countTickets() {
+        return entityManager.createQuery(
+                        "SELECT COUNT(t) FROM Ticket t",
+                        Integer.class)
+                .getSingleResult();
+    }
+
 }
