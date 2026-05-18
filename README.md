@@ -1,21 +1,85 @@
-## JaxRS + openAPI
+## Intro et technologie
 
-1. Import this project in your IDE, 
-2. Start the database
-3. Start the database viewer
-4. Start the backend. There is a main class to start the backend
+Bienvenue sur le dépôt du back-end de Stagely, une application de gestion et d'achat de billets de concerts développée en Java avec JAX-RS (Jersey), JPA (Hibernate) et HSQLDB.
 
 
+## Installation et Démarrage du Projet
 
+### Prérequis
+
+Java JDK 17 installé.
+
+Apache Maven 3.6 ou supérieur installé.
+
+### Démarrage
+
+Génération et injection des données de test Exécutez la classe de test JpaTest pour initialiser la base de données locale HSQLDB avec les données factices de démonstration :
+
+mvn exec:java -Dexec.mainClass="fr.istic.taa.jaxrs.domain.JpaTest"
+
+
+Lancement du serveur REST Lancez le serveur d'applications intégré à l'aide du plugin Maven Jetty :
+
+mvn jetty:run
+
+
+Accès à l'application * API REST : accessible par défaut à l'adresse http://localhost:8080/api
+
+Documentation Swagger (OpenAPI) : disponible à l'adresse http://localhost:8080/swagger ou via le flux JSON http://localhost:8080/api/openapi.json
 
 # Task Open API Integration 
 
-Now, we would like to ensure that our API can be discovered. The OpenAPI Initiative (OAI) was created by a consortium of forward-looking industry experts who recognize the immense value of standardizing on how REST APIs are described. As an open governance structure under the Linux Foundation, the OAI is focused on creating, evolving and promoting a vendor neutral description format. 
+Points d'Accès de l'API REST (Endpoints)
 
-APIs form the connecting glue between modern applications. Nearly every application uses APIs to connect with corporate data sources, third party data services or other applications. Creating an open description format for API services that is vendor neutral, portable and open is critical to accelerating the vision of a truly connected world.
+L'API est exposée sous le préfixe /api. Voici une synthèse des routes principales :
 
-To do this integration first, I already add a dependencies to openAPI libraries. 
+## Gestion des Billets (/tickets)
 
+GET /tickets : Liste globale des tickets ou filtrage par utilisateur via paramètre d'e-mail (?email=client@test.com).
+
+GET /tickets/{id} : Récupération des informations d'un billet spécifique.
+
+POST /tickets : Action métier permettant l'achat de places de concert via TicketCreateDto.
+
+PUT /tickets/{id}/transfer : Action métier initiant le transfert sécurisé d'un billet vers un autre e-mail via TicketTransferDto.
+
+PUT /tickets/{id}/cancel : Demande d'annulation d'un billet.
+
+PUT /tickets/{id}/refund : Déclenchement du remboursement d'un billet.
+
+## Gestion des Concerts (/concerts)
+
+GET /concerts : Liste de tous les concerts.
+
+GET /concerts/search?q={query} : Recherche dynamique (nom, artiste, genre musical, lieu).
+
+GET /concerts/{id} : Fiche détaillée d'un concert spécifique.
+
+POST /concerts : Création d'un événement (via ConcertCreateDto).
+
+PUT /concerts/{id} : Mise à jour des informations d'un concert.
+
+DELETE /concerts/{id} : Suppression d'un concert du catalogue.
+
+GET /concerts/sortByPopularity : Tri des événements du plus populaire au moins populaire.
+
+GET /concerts/sortByPrice : Tri des concerts par prix croissant.
+
+GET /concerts/sortByDate : Tri des concerts par ordre chronologique.
+
+## Statistiques Administratives (/stats)
+
+GET /stats : Calcule et retourne un objet consolidé AdminStats contenant les indicateurs clés de performance (KPI) de la plateforme (nombre d'utilisateurs inscrits, total des concerts en ligne, volume de tickets vendus, etc.).
+
+## Profils Utilisateurs (CRUD de base)
+
+/users (Utilisateurs finaux)
+
+/artists (Artistes et groupes)
+
+/organizers (Organisateurs d'événements)
+
+/admins (Gestionnaires de la plateforme)
 ```xml
 		<dependency>
 			<groupId>io.swagger.core.v3</groupId>
