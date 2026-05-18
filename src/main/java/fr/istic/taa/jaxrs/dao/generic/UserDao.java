@@ -6,10 +6,12 @@ public class UserDao  extends AbstractJpaDao<Long, User>{
         super(User.class);
     }
 
-    public int countUsers() {
-        return entityManager.createQuery(
+    public Long countUsers() {
+        Long count = entityManager.createQuery(
                         "SELECT COUNT(p) FROM Person p WHERE TYPE(p) = User",
-                        Integer.class)
+                        Long.class)
                 .getSingleResult();
+        entityManager.clear();
+        return count;
     }
 }

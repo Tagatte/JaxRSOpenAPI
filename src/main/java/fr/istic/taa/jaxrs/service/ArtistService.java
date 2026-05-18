@@ -12,7 +12,7 @@ import jakarta.ws.rs.PathParam;
 import java.util.List;
 
 public class ArtistService {
-    public int countArtists(){
+    public Long countArtists(){
         return artistDao.countArtists();
     }
     private Artist fromDtoToArtistMapper(PersonBaseDto personBaseDto, Artist artist) {

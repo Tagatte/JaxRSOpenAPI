@@ -19,10 +19,15 @@ public class TicketResource {
 
     @GET
     @Path("/")
-    public List<Ticket> getAllTickets() {
+    public List<Ticket> getTickets(@QueryParam("email") String email) {
+
+        if (email != null && !email.isEmpty()) {
+            // Si l'email est fourni, on filtre pour recuper que le tickets d'un client
+            return ticketService.findByEmail(email);
+        }
+        // Sinon, on retourne tout pour le dashboard admin
         return ticketService.getAllTickets();
     }
-
     @GET
     @Path("/{id}")
     public Ticket getTicket(@PathParam("id") long id) {
@@ -48,7 +53,7 @@ public class TicketResource {
     }
 
     @POST
-    @Path("/buy")
+    @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Operation(summary = "Acheter un ticket", description = "Permet à un utilisateur d'acheter un ticket pour un concert")
     @ApiResponses({
@@ -60,19 +65,6 @@ public class TicketResource {
         return ticketService.buyTicket(ticketCreateDto);
     }
 
-
-    @GET
-    @Path("/user/{userId}")
-    @Operation(summary = "Tickets d'un utilisateur", description = "Retourne tous les tickets achetés par un utilisateur")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Tickets trouvés"),
-            @ApiResponse(responseCode = "404", description = "Utilisateur non trouvé")
-    })
-    public List<Ticket> getTicketsByUser(
-            @Parameter(description = "ID de l'utilisateur", required = true)
-            @PathParam("userId") long userId) {
-        return ticketService.getTicketsByUser(userId);
-    }
 
     @PUT
     @Path("/{id}/transfer")
@@ -88,6 +80,6 @@ public class TicketResource {
             @PathParam("id") long id,
             @Parameter(description = "ID du nouvel utilisateur", required = true)
             TicketTransferDto ticketTransferDto) {
-        return ticketService.transferTicket(id, ticketTransferDto.getNewUserId());
+        return ticketService.transferTicket(id, ticketTransferDto.getNewUserEmail());
     }
 }

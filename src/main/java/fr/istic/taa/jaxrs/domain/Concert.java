@@ -1,5 +1,6 @@
 package fr.istic.taa.jaxrs.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -27,14 +28,16 @@ import jakarta.persistence.NamedQuery;
 public class Concert implements Serializable {
     private Long id;
     private String name;
+    private String image;
     private Date date;
-    private int startTime;
-    private int endTime;
+    private String startTime;
+    private String endTime;
     private String location;
     private Long price;
     private String musicalGenre;
     private int popularity;
     private int placeNumber;
+    private int availableTickets;
     private String description;
     private boolean isCanceled;
     private boolean isDeleted;
@@ -65,11 +68,19 @@ public class Concert implements Serializable {
         this.name = name;
     }
 
-    public int getStartTime() {
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(int startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
@@ -82,11 +93,11 @@ public class Concert implements Serializable {
         this.date = date;
     }
 
-    public int getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(int endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
@@ -130,6 +141,14 @@ public class Concert implements Serializable {
         this.placeNumber = placeNumber;
     }
 
+    public int getAvailableTickets() {
+        return availableTickets;
+    }
+
+    public void setAvailableTickets(int availableTickets) {
+        this.availableTickets = availableTickets;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -171,10 +190,14 @@ public class Concert implements Serializable {
         this.validationDate = validationDate;
     }
     @OneToMany(mappedBy = "concert")
+    @JsonIgnore
     public Collection<Ticket> getTickets() {
         return tickets;
     }
 
+    public void setTickets(Collection<Ticket> tickets) {
+        this.tickets = tickets;
+    }
 
     @ManyToOne
     public Admin getAdmin() {
@@ -192,9 +215,6 @@ public class Concert implements Serializable {
 
     public void setOrganizer(Organizer organizer) {
         this.organizer = organizer;
-    }
-    public void setTickets(Collection<Ticket> tickets) {
-        this.tickets = tickets;
     }
 
     @ManyToMany(mappedBy = "concerts")

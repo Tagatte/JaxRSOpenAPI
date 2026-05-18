@@ -11,12 +11,16 @@ import java.util.Date;
 public class Ticket implements Serializable {
     private Long id;
     private Long price;
+    private int quantity;
+    private  String buyerEmail;
+    private String transferorEmail; // Celui qui a donné le ticket
+    private String status; // 'confirmed', 'pending', 'cancelled', 'transferred'
     private boolean isCanceled;
     private boolean isRefunded;
     private Date date;
     private Date cancelDate;
     private Date refundDate;
-    private User user;
+//    private User user;
     private Concert concert;
 
     public Ticket() {
@@ -39,6 +43,14 @@ public class Ticket implements Serializable {
 
     public void setPrice(Long price) {
         this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public boolean isCanceled() {
@@ -83,17 +95,21 @@ public class Ticket implements Serializable {
         this.refundDate = refundDate;
     }
 
-    @JsonIgnore
-    @ManyToOne
-    public User getUser() {
-        return user;
+    public String getBuyerEmail() {
+        return buyerEmail;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setBuyerEmail(String buyerEmail) {
+        this.buyerEmail = buyerEmail;
     }
 
-    @JsonIgnore
+    public String getTransferorEmail() { return transferorEmail; }
+    public void setTransferorEmail(String transferorEmail) { this.transferorEmail = transferorEmail; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+
+//    @JsonIgnore
     @ManyToOne
     public Concert getConcert() {
         return concert;

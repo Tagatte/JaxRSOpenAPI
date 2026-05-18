@@ -9,10 +9,12 @@ public class OrganizerDao extends AbstractJpaDao<Long, Organizer>{
         super(Organizer.class);
     }
 
-    public int countOrganizers() {
-        return entityManager.createQuery(
+    public Long countOrganizers() {
+        Long count = entityManager.createQuery(
                         "SELECT COUNT(p) FROM Person p WHERE TYPE(p) = Organizer",
-                        Integer.class)
+                        Long.class)
                 .getSingleResult();
+        entityManager.clear();
+        return count;
     }
 }

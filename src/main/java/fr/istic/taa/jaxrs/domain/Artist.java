@@ -1,5 +1,6 @@
 package fr.istic.taa.jaxrs.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -14,6 +15,7 @@ public class Artist extends Person implements Serializable {
     public Artist() {}
 
     @ManyToMany
+    @JsonIgnore
     public Collection<Concert> getConcerts() {
         return concerts;
     }
