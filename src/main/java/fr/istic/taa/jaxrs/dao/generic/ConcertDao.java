@@ -69,11 +69,15 @@ public class ConcertDao extends AbstractJpaDao<Long, Concert> {
                 .getResultList();
     }
 
-    public int countConcerts(){
-        return entityManager.createQuery(
+    public Long countConcerts(){
+        Long count = entityManager.createQuery(
                         "SELECT COUNT(c) FROM Concert c",
-                        Integer.class)
+                        Long.class)
+
                 .getSingleResult();
+
+        entityManager.clear();
+        return count;
     }
 
 }

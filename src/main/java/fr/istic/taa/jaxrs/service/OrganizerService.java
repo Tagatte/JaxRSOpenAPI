@@ -16,7 +16,7 @@ import java.util.List;
 
 public class OrganizerService {
 
-    public int countOrganizers(){
+    public Long countOrganizers(){
         return organizerDao.countOrganizers();
     }
 

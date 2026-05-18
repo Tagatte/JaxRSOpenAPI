@@ -1,24 +1,24 @@
 package fr.istic.taa.jaxrs.domain;
 
 public class AdminStats {
-    private int totalConcerts;
-    private int totalUsers;
-    private int totalArtists;
-    private int totalOrganizers;
-    private int totalTickets;
+    private Long totalConcerts;
+    private Long totalUsers;
+    private Long totalArtists;
+    private Long totalOrganizers;
+    private Long totalTickets;
 
-    public int getTotalConcerts() { return totalConcerts; }
-    public void setTotalConcerts(int totalConcerts) { this.totalConcerts = totalConcerts; }
+    public Long getTotalConcerts() { return totalConcerts; }
+    public void setTotalConcerts(Long totalConcerts) { this.totalConcerts = totalConcerts; }
 
-    public int getTotalUsers() { return totalUsers; }
-    public void setTotalUsers(int totalUsers) { this.totalUsers = totalUsers; }
+    public Long getTotalUsers() { return totalUsers; }
+    public void setTotalUsers(Long totalUsers) { this.totalUsers = totalUsers; }
 
-    public int getTotalArtists() { return totalArtists; }
-    public void setTotalArtists(int totalArtists) { this.totalArtists = totalArtists; }
+    public Long getTotalArtists() { return totalArtists; }
+    public void setTotalArtists(Long totalArtists) { this.totalArtists = totalArtists; }
 
-    public int getTotalOrganizers() { return totalOrganizers; }
-    public void setTotalOrganizers(int totalOrganizers) { this.totalOrganizers = totalOrganizers; }
+    public Long getTotalOrganizers() { return totalOrganizers; }
+    public void setTotalOrganizers(Long totalOrganizers) { this.totalOrganizers = totalOrganizers; }
 
-    public int getTotalTickets() { return totalTickets; }
-    public void setTotalTickets(int totalTickets) { this.totalTickets = totalTickets; }
+    public Long getTotalTickets() { return totalTickets; }
+    public void setTotalTickets(Long totalTickets) { this.totalTickets = totalTickets; }
 }

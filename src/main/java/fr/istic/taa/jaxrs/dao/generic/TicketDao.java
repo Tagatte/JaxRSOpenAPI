@@ -17,11 +17,13 @@ public class TicketDao extends  AbstractJpaDao<Long, Ticket>{
                 .getResultList();
     }
 
-    public int countTickets() {
-        return entityManager.createQuery(
+    public Long countTickets() {
+        Long count =  entityManager.createQuery(
                         "SELECT COUNT(t) FROM Ticket t",
-                        Integer.class)
+                        Long.class)
                 .getSingleResult();
+        entityManager.clear();
+        return count;
     }
 
 }
