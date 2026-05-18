@@ -16,10 +16,15 @@ import java.util.List;
 
 public class UserService {
 
-    private User fromDtoToUserMapper(PersonBaseDto personBaseDto, User user)
-    {
+    public int countUsers(){
+        return userDao.countUsers();
+    }
+
+    private User fromDtoToUserMapper(PersonBaseDto personBaseDto, User user) {
         user.setFirstname(personBaseDto.getFirstname());
         user.setLastname(personBaseDto.getLastname());
+        user.setEmail(personBaseDto.getEmail());
+        user.setPhone(personBaseDto.getPhone());
         return user;
     }
 
@@ -51,6 +56,5 @@ public class UserService {
     public void deleteUser(long id){
         userDao.deleteById(id);
     }
-
 
 }

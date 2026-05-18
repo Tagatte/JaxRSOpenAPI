@@ -4,13 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c34f434d-080f-43db-ba81-5afb68a8cf5b" name="Changes" comment="ajout de l'extends AbstractJpaDao aux classes Dao">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dto/TicketTransferDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c34f434d-080f-43db-ba81-5afb68a8cf5b" name="Changes" comment="Merge remote-tracking branch 'origin/develop' into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;data/test.lck&#10;#&#9;data/test.log&#10;#&#9;data/test.properties&#10;#&#9;data/test.script&#10;#&#9;src/main/java/fr/istic/taa/jaxrs/dao/generic/TicketDao.java&#10;#&#9;target/classes/fr/istic/taa/jaxrs/dao/generic/TicketDao.class&#10;#&#9;target/classes/fr/istic/taa/jaxrs/service/ConcertService.class&#10;#&#9;target/classes/fr/istic/taa/jaxrs/service/TicketService.class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/AdminStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/AdminStatsResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/domain/AdminStats.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/rest/AdminStatsResource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/TestApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/TestApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ArtistDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ArtistDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ConcertDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/ConcertDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/OrganizerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/OrganizerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/TicketDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/domain/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/TicketResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/TicketResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/dao/generic/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ArtistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ArtistService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/ConcertService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/OrganizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/OrganizerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/TestApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/TestApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/ArtistDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/ArtistDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/ConcertDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/ConcertDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/OrganizerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/OrganizerDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/TicketDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/TicketDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/dao/generic/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ArtistService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ArtistService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ConcertService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/ConcertService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/OrganizerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/OrganizerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/TicketService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/TicketService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/istic/taa/jaxrs/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,35 +74,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.JpaTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.RestServer.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.fr.istic.taa.jaxrs.domain in jaxrs-example.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Shell Script.run-hsqldb-server.sh.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.show-hsqldb.sh.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tdiop/JaxRSOpenAPI&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.JpaTest.executor": "Run",
+    "Application.RestServer.executor": "Run",
+    "JUnit.fr.istic.taa.jaxrs.domain in jaxrs-example.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Shell Script.run-hsqldb-server.sh.executor": "Run",
+    "Shell Script.show-hsqldb.sh.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Merging develop",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tdiop/JaxRSOpenAPI",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="fr.istic.taa.jaxrs.domain" />
@@ -90,7 +111,7 @@
       <recent name="fr.istic.taa.jaxrs.rest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RestServer">
+  <component name="RunManager" selected="Application.JpaTest">
     <configuration name="JpaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.istic.taa.jaxrs.domain.JpaTest" />
       <module name="jaxrs-example" />
@@ -163,8 +184,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RestServer" />
         <item itemvalue="Application.JpaTest" />
+        <item itemvalue="Application.RestServer" />
         <item itemvalue="JUnit.fr.istic.taa.jaxrs.domain in jaxrs-example" />
       </list>
     </recent_temporary>
@@ -215,6 +236,11 @@
       <workItem from="1777117415203" duration="3777000" />
       <workItem from="1777122788862" duration="13562000" />
       <workItem from="1777140755345" duration="6271000" />
+      <workItem from="1777320774433" duration="1498000" />
+      <workItem from="1777754282753" duration="294000" />
+      <workItem from="1777926869480" duration="3023000" />
+      <workItem from="1778373971537" duration="7324000" />
+      <workItem from="1778613268233" duration="29716000" />
     </task>
     <task id="LOCAL-00001" summary="entity add">
       <option name="closed" value="true" />
@@ -256,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772301390527</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge branch 'develop' of https://github.com/Tagatte/JaxRSOpenAPI into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <option name="closed" value="true" />
+      <created>1777214539908</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777214539908</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,5 +313,16 @@
     <MESSAGE value="ajout de l'implementation de l'interface Serializable aux entités" />
     <MESSAGE value="ajout de l'extends AbstractJpaDao aux classes Dao" />
     <option name="LAST_COMMIT_MESSAGE" value="ajout de l'extends AbstractJpaDao aux classes Dao" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fr/istic/taa/jaxrs/rest/ConcertResource.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
