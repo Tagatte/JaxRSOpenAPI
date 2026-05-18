@@ -8,10 +8,12 @@ public class ArtistDao extends AbstractJpaDao<Long, Artist> {
         super(Artist.class);
     }
 
-    public int countArtists() {
-        return entityManager.createQuery(
+    public Long countArtists() {
+        Long count =  entityManager.createQuery(
                         "SELECT COUNT(p) FROM Person p WHERE TYPE(p) = Artist",
-                        Integer.class)
+                        Long.class)
                 .getSingleResult();
+        entityManager.clear();
+        return count;
     }
 }

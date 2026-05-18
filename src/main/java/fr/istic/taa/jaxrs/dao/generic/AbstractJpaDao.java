@@ -28,7 +28,7 @@ public abstract class AbstractJpaDao<K, T extends Serializable> implements IGene
 	}
 
 	public T findOne(K id) {
-		entityManager.clear();
+//		entityManager.clear();
 		return entityManager.find(clazz, id);
 	}
 

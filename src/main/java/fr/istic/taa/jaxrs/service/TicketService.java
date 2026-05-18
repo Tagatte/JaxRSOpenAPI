@@ -18,7 +18,7 @@ public class TicketService {
     private final ConcertDao concertDao = new ConcertDao();
     private final UserDao userDao = new UserDao();
 
-    public int countTickets(){
+    public Long countTickets(){
         return ticketDao.countTickets();
     }
     public List<Ticket> getAllTickets() {

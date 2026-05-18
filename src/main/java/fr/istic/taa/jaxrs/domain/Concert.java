@@ -28,6 +28,7 @@ import jakarta.persistence.NamedQuery;
 public class Concert implements Serializable {
     private Long id;
     private String name;
+    private String image;
     private Date date;
     private String startTime;
     private String endTime;
@@ -65,6 +66,14 @@ public class Concert implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getStartTime() {

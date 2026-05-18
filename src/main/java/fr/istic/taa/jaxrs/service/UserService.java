@@ -16,7 +16,7 @@ import java.util.List;
 
 public class UserService {
 
-    public int countUsers(){
+    public Long countUsers(){
         return userDao.countUsers();
     }
 

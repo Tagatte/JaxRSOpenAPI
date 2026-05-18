@@ -6,12 +6,13 @@ import fr.istic.taa.jaxrs.service.ConcertService;
 import fr.istic.taa.jaxrs.service.OrganizerService;
 import fr.istic.taa.jaxrs.service.TicketService;
 import fr.istic.taa.jaxrs.service.UserService;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/admin")
+@Path("stats")
 @Produces(MediaType.APPLICATION_JSON)
 public class AdminStatsResource {
 
@@ -22,7 +23,8 @@ public class AdminStatsResource {
     private final TicketService ticketService = new TicketService();
 
     @GET
-    @Path("/stats")
+    @Path("/")
+    @Transactional
     public AdminStats getStats() {
         AdminStats stats = new AdminStats();
         stats.setTotalConcerts(concertService.countConcerts());
@@ -30,6 +32,7 @@ public class AdminStatsResource {
         stats.setTotalArtists(artistService.countArtists());
         stats.setTotalOrganizers(organizerService.countOrganizers());
         stats.setTotalTickets(ticketService.countTickets());
+//        System.out.println("Total concert count: " + stats.getTotalConcerts());
         return stats;
     }
 }
